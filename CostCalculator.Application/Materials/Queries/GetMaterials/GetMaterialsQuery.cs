@@ -15,13 +15,7 @@ namespace CostCalculator.Application.Materials.Queries.GetMaterials
         {
             return await _context.Materials
                 .AsNoTracking()
-                .Select(m => new MaterialDto(
-                    m.Id,
-                    m.Name,
-                    m.UnitCost,
-                    m.UnitOfMeasure,
-                    m.UpdatedAt
-                ))
+                .Select(m => MaterialDto.MapFrom(m))
                 .ToListAsync(cancellationToken);
         }
     }

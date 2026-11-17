@@ -17,7 +17,7 @@ namespace CostCalculator.Application.Products.Common
         List<ProductRecipeItemDto> RecipeItems
     )
     {
-        public static ProductDto FromDomain(Product product)
+        public static ProductDto MapFrom(Product product)
         {
             return new ProductDto(
                         product.Id,

@@ -21,7 +21,7 @@ namespace CostCalculator.Application.Products.Queries.GetProductById
                 .FirstOrDefaultAsync(p => p.Id == request.Id)
                 ?? throw new KeyNotFoundException($"Product with ID {request.Id} not found.");
 
-            return ProductDto.FromDomain(product);
+            return ProductDto.MapFrom(product);
         }
     }
 }

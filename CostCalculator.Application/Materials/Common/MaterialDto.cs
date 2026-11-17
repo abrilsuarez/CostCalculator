@@ -12,7 +12,7 @@ namespace CostCalculator.Application.Materials.Common
         DateTime UpdatedAt
         )
     {
-        public static MaterialDto FromDomain(Material material)
+        public static MaterialDto MapFrom(Material material)
         {
             return new MaterialDto(
                 material.Id,

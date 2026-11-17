@@ -15,7 +15,7 @@ namespace CostCalculator.Application.Materials.Queries.GetMaterialById
             var material = await _context.Materials.AsNoTracking().FirstOrDefaultAsync(m => m.Id == request.Id)
                 ?? throw new KeyNotFoundException($"Material with ID {request.Id} not found");
 
-            return MaterialDto.FromDomain(material);
+            return MaterialDto.MapFrom(material);
         }
     }
 }

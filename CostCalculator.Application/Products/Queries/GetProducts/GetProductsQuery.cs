@@ -27,24 +27,7 @@ namespace CostCalculator.Application.Products.Queries.GetProducts
                     .ThenInclude(ri => ri.Material)
                 .ToListAsync(cancellationToken);
 
-            return products.Select(p => new ProductDto(
-                p.Id,
-                p.Name,
-                p.Description,
-                p.LaborCost,
-                p.ProfitMarginPercentage,
-                p.CalculateMaterialsCost(),
-                p.CalculateTotalCost(),
-                p.CalculateSuggestedPrice(),
-                p.RecipeItems.Select(ri => new ProductRecipeItemDto(
-                    ri.MaterialId,
-                    ri.Material.Name,
-                    ri.Material.UnitOfMeasure,
-                    ri.Material.UnitCost,
-                    ri.QuantityRequired,
-                    ri.Cost()
-                )).ToList()
-            )).ToList();
+            return products.Select(p => ProductDto.MapFrom(p)).ToList();
         }
     }
 }
