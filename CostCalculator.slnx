@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="CostCalculator.Application/CostCalculator.Application.csproj" />
+  <Project Path="CostCalculator.Domain/CostCalculator.Domain.csproj" />
+  <Project Path="CostCalculator.Infrastructure/CostCalculator.Infrastructure.csproj" />
+  <Project Path="CostCalculator.Api/CostCalculator.Api.csproj" />
+</Solution>
